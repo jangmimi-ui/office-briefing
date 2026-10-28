@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>매물 브리핑 | BRIDGE 사옥 브리핑</title>
+<meta name="description" content="50억~100억 중소기업 사옥 매물 브리핑 목록과 비교표.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="briefs">
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head no-print">
+        <div>
+          <div class="eyebrow">Briefs</div>
+          <h1>매물 브리핑</h1>
+          <p class="muted">조건에 맞는 매물 <b id="count">0</b>건 · 최대 3건까지 담아 비교표로 볼 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="filters no-print" id="filters">
+        <label class="f">지역<select id="f-area"></select></label>
+        <label class="f">매매가
+          <select id="f-price">
+            <option value="">전체 (50억~100억)</option>
+            <option value="lt70">70억 미만</option>
+            <option value="70-85">70억~85억</option>
+            <option value="ge85">85억 이상</option>
+          </select>
+        </label>
+        <label class="f">연면적
+          <select id="f-gross">
+            <option value="">전체</option>
+            <option value="lt300">300평 미만</option>
+            <option value="300-500">300~500평</option>
+            <option value="ge500">500평 이상</option>
+          </select>
+        </label>
+        <label class="f">정렬
+          <select id="f-sort">
+            <option value="price-asc">가격 낮은 순</option>
+            <option value="price-desc">가격 높은 순</option>
+            <option value="perpy">평단가 낮은 순</option>
+            <option value="gross">연면적 큰 순</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid c3 no-print" id="list"></div>
+
+      <div id="compare" hidden style="margin-top:40px">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Comparison</div>
+            <h2>매물 비교표</h2>
+          </div>
+          <button class="btn ghost no-print" id="compare-print">비교표 인쇄</button>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div class="table-wrap"><table id="compare-table"></table></div>
+        </div>
+        <p class="note">예시 데이터입니다. 실제 거래 전 공적 서류로 확인하십시오.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="compare-bar" id="compare-bar">
+  <div class="wrap">
+    <span id="compare-names"></span>
+    <span style="display:flex;gap:8px">
+      <button class="btn sm light" id="compare-go">비교표 보기</button>
+      <button class="btn sm ghost" id="compare-clear" style="color:#fff;border-color:rgba(255,255,255,.5)">비우기</button>
+    </span>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

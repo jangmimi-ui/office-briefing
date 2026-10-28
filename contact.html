@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>매수·매도 상담 | BRIDGE 사옥 브리핑</title>
+<meta name="description" content="중소기업 사옥 매수 브리핑 미팅 요청과 매도 의뢰.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+<main>
+  <section>
+    <div class="wrap" style="max-width:860px">
+      <div class="eyebrow">Contact</div>
+      <h1>매수·매도 상담</h1>
+      <p class="muted">담당 중개사가 영업일 기준 1일 안에 연락드리고, 조건에 맞는 브리핑 자료를 준비해 미팅을 잡아 드립니다.</p>
+
+      <div class="alert info"><b>안내:</b> 이 폼은 접수 화면 시연용으로, 입력한 내용이 실제로 전송되지 않습니다. 실제 상담은 <span id="office-contact"></span>로 연락해 주세요.</div>
+
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" data-tab="buy">매수 브리핑 요청</button>
+        <button type="button" role="tab" data-tab="sell">매도 의뢰</button>
+      </div>
+
+      <div class="alert done" id="done" hidden role="status"></div>
+
+      <!-- 매수 -->
+      <form class="card" data-form="buy" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="b-company">회사명 <span class="req">*</span></label><input id="b-company" name="company" required autocomplete="organization"><span class="err"></span></div>
+          <div class="field"><label for="b-name">담당자 성함 <span class="req">*</span></label><input id="b-name" name="name" required autocomplete="name"><span class="err"></span></div>
+          <div class="field"><label for="b-title">직책</label><input id="b-title" name="title" placeholder="예: 대표이사, 재무팀장"><span class="err"></span></div>
+          <div class="field"><label for="b-phone">연락처 <span class="req">*</span></label><input id="b-phone" name="phone" type="tel" required autocomplete="tel" placeholder="010-0000-0000"><span class="err"></span></div>
+          <div class="field full"><label for="b-email">이메일 <span class="req">*</span></label><input id="b-email" name="email" type="email" required autocomplete="email"><span class="err"></span></div>
+
+          <div class="field"><label for="b-budget">매입 예산 <span class="req">*</span></label>
+            <select id="b-budget" name="budget" required>
+              <option value="">선택</option><option>50억~70억</option><option>70억~85억</option><option>85억~100억</option><option>협의 / 미정</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="b-size">필요 연면적</label>
+            <select id="b-size" name="size">
+              <option value="">선택</option><option>300평 미만</option><option>300~500평</option><option>500평 이상</option><option>미정</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="b-when">입주 희망 시기</label>
+            <select id="b-when" name="when">
+              <option value="">선택</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option><option>1년 이후 / 미정</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="b-meet">미팅 방식</label>
+            <select id="b-meet" name="meet">
+              <option>방문 미팅 (귀사 사무실)</option><option>방문 미팅 (당사 사무실)</option><option>화상 미팅</option><option>전화 상담</option>
+            </select><span class="err"></span></div>
+
+          <div class="field full"><span class="lbl">희망 지역 (복수 선택)</span>
+            <div class="chips">
+              <label><input type="checkbox" name="region" value="성수·뚝섬"> 성수·뚝섬</label>
+              <label><input type="checkbox" name="region" value="문정·가락"> 문정·가락</label>
+              <label><input type="checkbox" name="region" value="마곡"> 마곡</label>
+              <label><input type="checkbox" name="region" value="가산·구로"> 가산·구로</label>
+              <label><input type="checkbox" name="region" value="문래·영등포"> 문래·영등포</label>
+              <label><input type="checkbox" name="region" value="경기 남부"> 경기 남부</label>
+              <label><input type="checkbox" name="region" value="기타"> 기타</label>
+            </div></div>
+
+          <div class="field full"><label for="buy-interest">관심 매물</label><select id="buy-interest" name="interest"></select><span class="err"></span></div>
+          <div class="field full"><label for="b-memo">요청 사항</label><textarea id="b-memo" name="memo" rows="4" placeholder="예: 현재 직원 45명, 강남권 통근 고려, 1층 쇼룸 필요"></textarea><span class="err"></span></div>
+
+          <div class="hp" aria-hidden="true"><label>비워 두세요<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="full">
+            <label class="consent"><input type="checkbox" name="consent"> <span>[필수] 상담을 위한 개인정보(회사명, 성함, 직책, 연락처, 이메일) 수집·이용에 동의합니다. 보유 기간: 상담 종료 후 1년. <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
+            <div class="err consent-err" style="color:var(--warn);font-size:.8rem;margin-top:4px"></div>
+          </div>
+          <div class="full"><button class="btn" type="submit">브리핑 미팅 요청</button></div>
+        </div>
+      </form>
+
+      <!-- 매도 -->
+      <form class="card" data-form="sell" novalidate hidden>
+        <div class="form-grid">
+          <div class="field"><label for="s-company">회사명 (소유 법인) <span class="req">*</span></label><input id="s-company" name="company" required autocomplete="organization"><span class="err"></span></div>
+          <div class="field"><label for="s-name">담당자 성함 <span class="req">*</span></label><input id="s-name" name="name" required autocomplete="name"><span class="err"></span></div>
+          <div class="field"><label for="s-phone">연락처 <span class="req">*</span></label><input id="s-phone" name="phone" type="tel" required autocomplete="tel" placeholder="010-0000-0000"><span class="err"></span></div>
+          <div class="field"><label for="s-email">이메일 <span class="req">*</span></label><input id="s-email" name="email" type="email" required autocomplete="email"><span class="err"></span></div>
+          <div class="field full"><label for="s-addr">건물 소재지 <span class="req">*</span></label><input id="s-addr" name="address" required placeholder="예: 서울 송파구 문정동 (동까지만 적어도 됩니다)"><span class="err"></span></div>
+
+          <div class="field"><label for="s-gross">연면적</label><input id="s-gross" name="gross" placeholder="예: 1,200㎡ 또는 360평"><span class="err"></span></div>
+          <div class="field"><label for="s-price">희망 매각가 <span class="req">*</span></label>
+            <select id="s-price" name="price" required>
+              <option value="">선택</option><option>50억~70억</option><option>70억~85억</option><option>85억~100억</option><option>시세 평가 요청</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="s-use">현재 사용 형태</label>
+            <select id="s-use" name="use">
+              <option value="">선택</option><option>전층 자가 사용</option><option>자가 + 일부 임대</option><option>전층 임대</option><option>공실</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="s-reason">매각 사유</label>
+            <select id="s-reason" name="reason">
+              <option value="">선택</option><option>사옥 확장 이전</option><option>사옥 축소·통합</option><option>자산 재편·유동성 확보</option><option>기타</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="s-when">매각 희망 시기</label>
+            <select id="s-when" name="when">
+              <option value="">선택</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option><option>시기 무관</option>
+            </select><span class="err"></span></div>
+          <div class="field"><label for="s-open">공개 범위</label>
+            <select id="s-open" name="open">
+              <option>비공개 (선별 법인 고객에게만 브리핑)</option><option>공개 (사이트 게재 가능)</option>
+            </select><span class="err"></span></div>
+          <div class="field full"><label for="s-memo">메모</label><textarea id="s-memo" name="memo" rows="4" placeholder="예: 매각 후 1년 임차(세일앤리스백) 희망"></textarea><span class="err"></span></div>
+
+          <div class="hp" aria-hidden="true"><label>비워 두세요<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="full">
+            <label class="consent"><input type="checkbox" name="consent"> <span>[필수] 상담을 위한 개인정보(회사명, 성함, 연락처, 이메일) 수집·이용에 동의합니다. 보유 기간: 상담 종료 후 1년. <a href="privacy.html" target="_blank">개인정보처리방침</a></span></label>
+            <div class="err consent-err" style="color:var(--warn);font-size:.8rem;margin-top:4px"></div>
+          </div>
+          <div class="full"><button class="btn" type="submit">매도 의뢰하기</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
